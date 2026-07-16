@@ -91,12 +91,40 @@ if os.environ.get("USE_OWN_MODEL") == "1":
     model.eval()
     print("UMWEO model ready")
 else:
-    print("USE_OWN_MODEL not set - running in retrieval-only mode")
+    print("USE_OWN_MODEL not set - own model disabled")
+
+# ---- Cloud LLM API (any OpenAI-compatible endpoint) ----
+# Default: Google Gemini (free key from https://aistudio.google.com/apikey).
+# Set LLM_API_KEY in the environment to enable. To use another provider
+# (e.g. Qwen via OpenRouter), also override LLM_API_URL and LLM_MODEL.
+LLM_API_KEY = os.environ.get("LLM_API_KEY", "")
+LLM_API_URL = os.environ.get(
+    "LLM_API_URL",
+    "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+)
+LLM_MODEL = os.environ.get("LLM_MODEL", "gemini-2.5-flash")
+if LLM_API_KEY:
+    print(f"Cloud LLM enabled: {LLM_MODEL}")
+elif model is None:
+    print("Running in retrieval-only mode")
 
 
 class Question(BaseModel):
     question: str
     language: str = "english"
+
+
+GREETING = re.compile(
+    r"^(hi|hello|hey|hallo|muli bwanji|mwapoleni|mwabuka buti|good (morning|afternoon|evening)"
+    r"|how are you|thanks?( you)?|zikomo|natotela|ok(ay)?|yes|no)\b[\s!.?]*$",
+    re.IGNORECASE,
+)
+
+WELCOME_REPLY = (
+    "Hello! I am UMWEO AI, your mining assistant. Ask me a question about "
+    "mining safety, licences, the environment, or gold and copper mining - "
+    "for example: 'What PPE do I need?' or 'How do I manage tailings safely?'"
+)
 
 
 def retrieve(question: str, k: int = TOP_K) -> list[dict]:
@@ -108,18 +136,16 @@ def retrieve(question: str, k: int = TOP_K) -> list[dict]:
 def sources_of(passages: list[dict]) -> list[dict]:
     seen = {}
     for p in passages:
-        seen.setdefault(p["url"], {"source": p["source"], "url": p["url"]})
+        seen.setdefault(p["source"], {"source": p["source"], "url": p["url"]})
     return list(seen.values())
 
 
-def generate_answer(question: str, passages: list[dict], language: str) -> str:
-    import torch
-
+def build_prompt(question: str, passages: list[dict], language: str) -> list[dict]:
     context = "\n\n".join(
         f"[Passage {i + 1} - from {p['source']}]\n{p['text']}"
         for i, p in enumerate(passages)
     )
-    messages = [
+    return [
         {"role": "system", "content": SYSTEM_PROMPT},
         {
             "role": "user",
@@ -129,6 +155,56 @@ def generate_answer(question: str, passages: list[dict], language: str) -> str:
             ),
         },
     ]
+
+
+def ask_cloud_llm(question: str, passages: list[dict], language: str) -> str | None:
+    """Answer via the configured cloud model (Gemini by default)."""
+    import urllib.request
+
+    payload = json.dumps(
+        {
+            "model": LLM_MODEL,
+            "messages": build_prompt(question, passages, language),
+            "max_tokens": 700,
+        }
+    ).encode("utf-8")
+    req = urllib.request.Request(
+        LLM_API_URL,
+        data=payload,
+        headers={
+            "Authorization": f"Bearer {LLM_API_KEY}",
+            "Content-Type": "application/json",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = json.loads(resp.read())
+        return data["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        print(f"Cloud LLM error: {e}")
+        return None  # caller falls back to retrieval-only
+
+
+def make_snippet(question: str, text: str, max_sentences: int = 4) -> str:
+    """Trim a raw chunk to whole sentences focused on the question."""
+    q_tokens = set(tokenize(question))
+    sentences = re.split(r"(?<=[.!?])\s+", text.strip())
+    # Chunks can start mid-sentence; drop a leading fragment.
+    if len(sentences) > 1 and sentences[0] and not sentences[0][0].isupper() \
+            and not sentences[0][0].isdigit():
+        sentences = sentences[1:]
+    if not sentences:
+        return text
+    overlaps = [len(q_tokens & set(tokenize(s))) for s in sentences]
+    best = max(range(len(sentences)), key=lambda i: overlaps[i])
+    window = sentences[best:best + max_sentences]
+    return " ".join(window).strip()
+
+
+def generate_answer(question: str, passages: list[dict], language: str) -> str:
+    import torch
+
+    messages = build_prompt(question, passages, language)
     prompt = model_tokenizer.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
     )
@@ -151,15 +227,20 @@ def home():
 
 @app.get("/health")
 def health():
-    return {
-        "status": "ok",
-        "chunks": len(chunks),
-        "model": "umweo (own fine-tuned)" if model else "retrieval-only",
-    }
+    if model is not None:
+        brain = "umweo (own fine-tuned)"
+    elif LLM_API_KEY:
+        brain = f"cloud ({LLM_MODEL})"
+    else:
+        brain = "retrieval-only"
+    return {"status": "ok", "chunks": len(chunks), "model": brain}
 
 
 @app.post("/ask")
 def ask(q: Question):
+    if GREETING.match(q.question.strip()):
+        return {"answer": WELCOME_REPLY, "sources": [], "mode": "greeting"}
+
     passages = retrieve(q.question)
     if not passages:
         return {
@@ -172,17 +253,22 @@ def ask(q: Question):
             "mode": "no_match",
         }
 
-    if model is None:
-        best = passages[0]
-        return {
-            "answer": f"{best['text']}\n\n(Source: {best['source']})",
-            "sources": sources_of(passages),
-            "mode": "retrieval_only",
-        }
+    # 1. Our own fine-tuned model (when enabled and loaded)
+    if model is not None:
+        answer = generate_answer(q.question, passages, q.language)
+        return {"answer": answer, "sources": sources_of(passages), "mode": "umweo_model"}
 
-    answer = generate_answer(q.question, passages, q.language)
+    # 2. Cloud LLM (Gemini by default)
+    if LLM_API_KEY:
+        answer = ask_cloud_llm(q.question, passages, q.language)
+        if answer:
+            return {"answer": answer, "sources": sources_of(passages), "mode": "cloud_ai"}
+
+    # 3. Fallback: quote the most relevant document passage directly
+    best = passages[0]
+    snippet = make_snippet(q.question, best["text"])
     return {
-        "answer": answer,
+        "answer": f"{snippet}\n\n(Source: {best['source']})",
         "sources": sources_of(passages),
-        "mode": "umweo_model",
+        "mode": "retrieval_only",
     }
