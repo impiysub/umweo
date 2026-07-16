@@ -115,8 +115,9 @@ class Question(BaseModel):
 
 
 GREETING = re.compile(
-    r"^(hi|hello|hey|hallo|muli bwanji|mwapoleni|mwabuka buti|good (morning|afternoon|evening)"
-    r"|how are you|thanks?( you)?|zikomo|natotela|ok(ay)?|yes|no)\b[\s!.?]*$",
+    r"^(hi|hello|hey|hallo|muli ?bwanji|muli ?shani|mulishani|mwashibukeni"
+    r"|mwapoleni|mwabuka buti|shani|bwanji|good (morning|afternoon|evening)"
+    r"|how are you|thanks?( you)?|zikomo|natotela|twalumba|ok(ay)?|yes|no)\b[\s!.?]*$",
     re.IGNORECASE,
 )
 
@@ -157,8 +158,13 @@ def build_prompt(question: str, passages: list[dict], language: str) -> list[dic
     ]
 
 
+last_llm_error: str | None = None
+
+
 def ask_cloud_llm(question: str, passages: list[dict], language: str) -> str | None:
     """Answer via the configured cloud model (Gemini by default)."""
+    global last_llm_error
+    import urllib.error
     import urllib.request
 
     payload = json.dumps(
@@ -172,17 +178,21 @@ def ask_cloud_llm(question: str, passages: list[dict], language: str) -> str | N
         LLM_API_URL,
         data=payload,
         headers={
-            "Authorization": f"Bearer {LLM_API_KEY}",
+            "Authorization": f"Bearer {LLM_API_KEY.strip()}",
             "Content-Type": "application/json",
         },
     )
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
             data = json.loads(resp.read())
+        last_llm_error = None
         return data["choices"][0]["message"]["content"].strip()
+    except urllib.error.HTTPError as e:
+        last_llm_error = f"HTTP {e.code}: {e.read().decode(errors='ignore')[:300]}"
     except Exception as e:
-        print(f"Cloud LLM error: {e}")
-        return None  # caller falls back to retrieval-only
+        last_llm_error = f"{type(e).__name__}: {e}"
+    print(f"Cloud LLM error: {last_llm_error}")
+    return None  # caller falls back to retrieval-only
 
 
 def make_snippet(question: str, text: str, max_sentences: int = 4) -> str:
@@ -233,7 +243,12 @@ def health():
         brain = f"cloud ({LLM_MODEL})"
     else:
         brain = "retrieval-only"
-    return {"status": "ok", "chunks": len(chunks), "model": brain}
+    return {
+        "status": "ok",
+        "chunks": len(chunks),
+        "model": brain,
+        "last_llm_error": last_llm_error,
+    }
 
 
 @app.post("/ask")
