@@ -1,0 +1,110 @@
+==========================================================
+UMWEO AI - PROTOTYPE DEMO PLAN
+Ministry of Mines and Minerals Development presentation
+==========================================================
+
+DEMO STORY (one narrative, ~5 minutes):
+A miner opens the app, asks a safety question in their own
+language, gets a simple spoken answer citing an official
+document, then loses internet - and the safety guides still
+work offline.
+
+----------------------------------------------------------
+1. BUILT FOR REAL (working features)
+----------------------------------------------------------
+
+[1] AI MINING ASSISTANT (the core)
+    - Chat interface (like ChatGPT)
+    - Answers grounded in the scraped knowledge base (RAG)
+    - Cites the source document for every answer
+    - Simple, plain-language explanations
+    - Demo questions to rehearse:
+        * "What should I do if my pit wall starts cracking?"
+        * "What PPE do I need for underground work?"
+        * "How can I recover gold without using mercury?"
+        * "What licence do I need for small-scale mining?"
+
+[2] LOCAL LANGUAGE SUPPORT
+    - Language picker: English, Bemba, Nyanja
+    - AI replies naturally in the chosen language
+    - Demo: ask the same safety question in Bemba
+
+[3] VOICE OUTPUT (text-to-speech)
+    - "Read aloud" button on every AI answer
+    - Works for miners who cannot read comfortably
+    - (Voice INPUT is phase two - do not demo)
+
+[4] SAFETY CENTRE (works offline)
+    - PPE guide
+    - Mercury awareness
+    - First aid basics
+    - Tunnel / pit wall safety
+    - Bundled in the app - no internet needed
+
+[5] EMERGENCY BUTTON (works offline)
+    - One tap -> emergency contacts + first aid steps
+    - Demo move: switch phone to airplane mode, show
+      Safety Centre and Emergency button still working
+
+----------------------------------------------------------
+2. MOCKED (static data, looks alive)
+----------------------------------------------------------
+
+[6] DAILY MINING TIP
+    - One hardcoded safety tip card on the home screen
+
+[7] MARKET INFORMATION
+    - Static price card (copper, gold) with real recent
+      prices typed in manually
+
+[8] LEARNING ACADEMY (preview)
+    - One sample module screen with a progress bar
+    - No certificates yet - mention as phase two
+
+----------------------------------------------------------
+3. ROADMAP SLIDE ONLY (do not build, just present)
+----------------------------------------------------------
+
+    - Mineral identification from photos
+    - Voice input (speak to the AI)
+    - Community forum
+    - Weather alerts
+    - User profiles and certificates
+    - Admin dashboard for the Ministry
+    - Push notifications and daily tip delivery
+    - Equipment guide
+    - Offline sync of new documents
+    - More languages: Tonga, Lozi, Kaonde, Lunda, Luvale
+    - Future: GIS/satellite, drone data, marketplace,
+      micro-loans, traceability
+
+----------------------------------------------------------
+4. KEY MESSAGE FOR THE MINISTRY
+----------------------------------------------------------
+
+    "This prototype demonstrates an AI assistant that
+    answers miners' questions in their own language,
+    grounded in authoritative mining guidance - with
+    every answer citing its source. In production, the
+    platform connects directly to official Ministry
+    publications, so miners always receive up-to-date,
+    approved information."
+
+    Position the Ministry as the trusted source - the
+    platform is ready to host THEIR official materials.
+
+----------------------------------------------------------
+5. TECHNICAL PIECES BEHIND THE DEMO
+----------------------------------------------------------
+
+    [x] Web scraper (scraper/scraper.py) - collects
+        documents from trusted mining sources
+    [x] Knowledge base builder (scraper/extract.py) -
+        RAG-ready chunks with source citations
+    [~] Data cleanup (scraper/prune.py) - run after crawl
+    [ ] RAG backend API - loads knowledge base, embeds
+        chunks, answers questions with citations
+    [ ] Flutter app - chat UI, language picker, TTS,
+        Safety Centre, Emergency button, mock cards
+
+==========================================================

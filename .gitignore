@@ -1,0 +1,18 @@
+# Large scraped files - the processed knowledge base IS committed,
+# but raw downloads are re-creatable by running the scraper.
+scraper/data/raw/
+
+# Model weights are too large for the repo (kept locally / on Kaggle)
+umweo-flora/*.safetensors
+umweo-flora/tokenizer.json
+training/train.jsonl
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db

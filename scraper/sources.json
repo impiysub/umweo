@@ -1,0 +1,48 @@
+{
+  "comment": "Seed pages for the mining knowledge base. The scraper visits each seed, follows links on the SAME domain up to max_depth, and downloads every PDF it finds. Add or remove sources freely.",
+  "max_depth": 2,
+  "max_pages_per_source": 40,
+  "delay_seconds": 2,
+  "sources": [
+    {
+      "name": "Ministry of Mines and Minerals Development (Zambia)",
+      "url": "https://www.mmmd.gov.zm/",
+      "tags": ["regulations", "licensing", "government"]
+    },
+    {
+      "name": "Zambia Environmental Management Agency (ZEMA)",
+      "url": "https://www.zema.org.zm/",
+      "tags": ["environment", "compliance", "government"]
+    },
+    {
+      "name": "National Assembly of Zambia - Acts",
+      "url": "https://www.parliament.gov.zm/acts-of-parliament",
+      "tags": ["legislation", "mines-and-minerals-act"]
+    },
+    {
+      "name": "ILO - Mining sector resources",
+      "url": "https://www.ilo.org/industries-and-sectors/mining-coal-and-metals",
+      "tags": ["safety", "training", "international"]
+    },
+    {
+      "name": "planetGOLD - mercury-free artisanal gold mining",
+      "url": "https://www.planetgold.org/resources",
+      "tags": ["training", "gold", "mercury-free", "artisanal", "how-to"]
+    },
+    {
+      "name": "Delve - World Bank/Pact ASM resource library",
+      "url": "https://delvedatabase.org/resources",
+      "tags": ["training", "artisanal", "small-scale", "how-to"]
+    },
+    {
+      "name": "IGF - artisanal and small-scale mining guidance",
+      "url": "https://www.igfmining.org/artisanal-and-small-scale-mining/",
+      "tags": ["training", "artisanal", "policy", "how-to"]
+    },
+    {
+      "name": "Alliance for Responsible Mining",
+      "url": "https://www.responsiblemines.org/en/",
+      "tags": ["training", "artisanal", "standards", "how-to"]
+    }
+  ]
+}

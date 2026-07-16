@@ -1,0 +1,1417 @@
+{
+  "https://www.zema.org.zm/": {
+    "file": "data\\raw\\c4206c25_index.txt",
+    "source": "Zambia Environmental Management Agency (ZEMA)",
+    "tags": [
+      "environment",
+      "compliance",
+      "government"
+    ],
+    "type": "html",
+    "title": "ZEMA Home - Zambia Environmental Management Agency",
+    "fetched": "2026-07-16 21:16:36"
+  },
+  "https://www.zema.org.zm/service/hazardous/": {
+    "file": "data\\raw\\e1bccc90_index.txt",
+    "source": "Zambia Environmental Management Agency (ZEMA)",
+    "tags": [
+      "environment",
+      "compliance",
+      "government"
+    ],
+    "type": "html",
+    "title": "Hazardous Waste Licence - Zambia Environmental Management Agency",
+    "fetched": "2026-07-16 21:16:40"
+  },
+  "https://www.zema.org.zm/zambian-pavillion-zema-others-showcase-readiness-to-support-climate-action/": {
+    "file": "data\\raw\\1501b7cb_index.txt",
+    "source": "Zambia Environmental Management Agency (ZEMA)",
+    "tags": [
+      "environment",
+      "compliance",
+      "government"
+    ],
+    "type": "html",
+    "title": "ZAMBIAN PAVILLION: ZEMA, OTHERS SHOWCASE READINESS TO SUPPORT CLIMATE ACTION - Zambia Environmental Management Agency",
+    "fetched": "2026-07-16 21:17:00"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament": {
+    "file": "data\\raw\\fecb239e_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:17:35"
+  },
+  "https://www.parliament.gov.zm/ministers": {
+    "file": "data\\raw\\1d301573_ministers.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Ministers | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:17:39"
+  },
+  "https://www.parliament.gov.zm/node/13351": {
+    "file": "data\\raw\\4bac4596_13351.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "The Local Government (Amendment) Act. 2026 | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:18:04"
+  },
+  "https://www.parliament.gov.zm/node/13348": {
+    "file": "data\\raw\\7c87897d_13348.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "The Zambia Development Agency (Amendment) Act, 2026 | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:18:21"
+  },
+  "https://www.parliament.gov.zm/node/13343": {
+    "file": "data\\raw\\b3ce2079_13343.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "The Patents and Companies Registration Agency (Amendment) Act, 2026 | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:18:27"
+  },
+  "https://www.parliament.gov.zm/node/13341": {
+    "file": "data\\raw\\691482e6_13341.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "The Occupational Health and Safety (Amendment) Act, 2026 | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:18:30"
+  },
+  "https://www.parliament.gov.zm/node/13334": {
+    "file": "data\\raw\\5a9fdf7b_13334.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "The National Health Research (Amendment) Act, 2026 | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:18:37"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament?page=1": {
+    "file": "data\\raw\\5f38e399_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:18:53"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament?page=2": {
+    "file": "data\\raw\\cbe5cde6_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:18:56"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament?page=3": {
+    "file": "data\\raw\\17bc8675_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:18:59"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament?page=4": {
+    "file": "data\\raw\\8f8d8b46_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:19:03"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament?page=5": {
+    "file": "data\\raw\\9ec5b3ab_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:19:08"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament?page=6": {
+    "file": "data\\raw\\ee6985dc_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:19:10"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament?page=7": {
+    "file": "data\\raw\\cb7d61dd_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:19:13"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament?page=8": {
+    "file": "data\\raw\\73c90595_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:19:16"
+  },
+  "https://www.parliament.gov.zm/acts-of-parliament?page=51": {
+    "file": "data\\raw\\b87cc764_acts-of-parliament.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament  | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:19:18"
+  },
+  "https://www.parliament.gov.zm/acts/volume/1075": {
+    "file": "data\\raw\\52686ac9_1075.txt",
+    "source": "National Assembly of Zambia - Acts",
+    "tags": [
+      "legislation",
+      "mines-and-minerals-act"
+    ],
+    "type": "html",
+    "title": "Acts of Parliament | National Assembly of Zambia",
+    "fetched": "2026-07-16 21:19:23"
+  },
+  "https://www.planetgold.org/resources": {
+    "file": "data\\raw\\48992c4c_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:21:40"
+  },
+  "https://www.planetgold.org/resources/planetgold-2024-2025-annual-progress-report": {
+    "file": "data\\raw\\89dde1e3_planetgold-2024-2025-annual-progress-report.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "planetGOLD 2024-2025 Annual Progress Report | planetGOLD",
+    "fetched": "2026-07-16 21:21:44"
+  },
+  "https://www.planetgold.org/formalization": {
+    "file": "data\\raw\\225c71ea_formalization.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Formalization | planetGOLD",
+    "fetched": "2026-07-16 21:21:48"
+  },
+  "https://www.planetgold.org/access-finance": {
+    "file": "data\\raw\\71b5a04f_access-finance.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Access to Finance | planetGOLD",
+    "fetched": "2026-07-16 21:21:52"
+  },
+  "https://www.planetgold.org/technical-solutions": {
+    "file": "data\\raw\\1fd44453_technical-solutions.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Technical Solutions | planetGOLD",
+    "fetched": "2026-07-16 21:21:56"
+  },
+  "https://www.planetgold.org/awareness-raising": {
+    "file": "data\\raw\\215423d2_awareness-raising.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Awareness Raising | planetGOLD",
+    "fetched": "2026-07-16 21:22:00"
+  },
+  "https://www.planetgold.org/sites/default/files/planetGOLD-Annual-Progress-Report-2024-2025.pdf": {
+    "file": "data\\raw\\a9e1a94b_planetGOLD-Annual-Progress-Report-2024-2025.pdf",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:24:44"
+  },
+  "https://www.planetgold.org/resources/cross-programmatic-assessment-planetgold-programme-phase-1": {
+    "file": "data\\raw\\c691b6e8_cross-programmatic-assessment-planetgold-programme-phase-1.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Cross-Programmatic Assessment of the planetGOLD Programme - Phase 1 | planetGOLD",
+    "fetched": "2026-07-16 21:45:31"
+  },
+  "https://www.planetgold.org/burkinafaso": {
+    "file": "data\\raw\\eb07cd39_burkinafaso.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Burkina Faso | planetGOLD",
+    "fetched": "2026-07-16 21:45:34"
+  },
+  "https://www.planetgold.org/colombia": {
+    "file": "data\\raw\\3ed08d0d_colombia.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Colombia | planetGOLD",
+    "fetched": "2026-07-16 21:45:37"
+  },
+  "https://www.planetgold.org/ecuador": {
+    "file": "data\\raw\\17e7fddc_ecuador.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Ecuador | planetGOLD",
+    "fetched": "2026-07-16 21:45:40"
+  },
+  "https://www.planetgold.org/guyana": {
+    "file": "data\\raw\\5bcdd61f_guyana.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Guyana | planetGOLD",
+    "fetched": "2026-07-16 21:45:44"
+  },
+  "https://www.planetgold.org/indonesia": {
+    "file": "data\\raw\\d97f3380_indonesia.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Indonesia | planetGOLD",
+    "fetched": "2026-07-16 21:45:48"
+  },
+  "https://www.planetgold.org/kenya": {
+    "file": "data\\raw\\aa96f997_kenya.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Kenya | planetGOLD",
+    "fetched": "2026-07-16 21:45:53"
+  },
+  "https://www.planetgold.org/mongolia": {
+    "file": "data\\raw\\eadf0bc1_mongolia.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Mongolia | planetGOLD",
+    "fetched": "2026-07-16 21:45:58"
+  },
+  "https://www.planetgold.org/peru": {
+    "file": "data\\raw\\998e88c1_peru.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Peru | planetGOLD",
+    "fetched": "2026-07-16 21:46:03"
+  },
+  "https://www.planetgold.org/philippines": {
+    "file": "data\\raw\\f57a99b0_philippines.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Philippines | planetGOLD",
+    "fetched": "2026-07-16 21:46:10"
+  },
+  "https://www.planetgold.org/resources?f%5B0%5D=topics%3A7": {
+    "file": "data\\raw\\f707c07e_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:46:20"
+  },
+  "https://www.planetgold.org/resources?f%5B0%5D=topics%3A38": {
+    "file": "data\\raw\\a90c974b_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:46:26"
+  },
+  "https://www.planetgold.org/resources?f%5B0%5D=topics%3A27": {
+    "file": "data\\raw\\5ec8d89f_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:46:32"
+  },
+  "https://www.planetgold.org/resources?f%5B0%5D=topics%3A4": {
+    "file": "data\\raw\\cedee2d0_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:46:38"
+  },
+  "https://www.planetgold.org/resources?f%5B0%5D=topics%3A12": {
+    "file": "data\\raw\\c10f6057_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:46:45"
+  },
+  "https://www.planetgold.org/sites/default/files/Cross-Programmatic_Assessment_planetGOLD_Phase_1.pdf": {
+    "file": "data\\raw\\5ba3efdf_Cross-Programmatic_Assessment_planetGOLD_Phase_1.pdf",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:47:58"
+  },
+  "https://www.planetgold.org/resources/occupational-safety-and-health-artisanal-and-small-scale-gold-mining-quick-reference": {
+    "file": "data\\raw\\2d2ff494_occupational-safety-and-health-artisanal-and-small-scale-gold-mining-quick-refer.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Occupational Safety and Health in Artisanal and Small-scale Gold Mining: Quick Reference Guide | planetGOLD",
+    "fetched": "2026-07-16 21:49:37"
+  },
+  "https://www.planetgold.org/resources?f%5B0%5D=topics%3A8": {
+    "file": "data\\raw\\d2d49acd_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:49:41"
+  },
+  "https://www.planetgold.org/sites/default/files/OSH-in-ASGM_Quick-Reference-Guide.pdf": {
+    "file": "data\\raw\\30157b51_OSH-in-ASGM_Quick-Reference-Guide.pdf",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:49:50"
+  },
+  "https://www.planetgold.org/engaging-asgm-short-guide-commercial-banks": {
+    "file": "data\\raw\\3504219d_engaging-asgm-short-guide-commercial-banks.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Engaging with ASGM: A Short Guide for Commercial Banks | planetGOLD",
+    "fetched": "2026-07-16 21:50:11"
+  },
+  "https://www.planetgold.org/resources?f%5B0%5D=topics%3A17": {
+    "file": "data\\raw\\65938529_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:50:15"
+  },
+  "https://www.planetgold.org/sites/default/files/Engaging-with-ASGM_Short-Guide-Commercial-Banks.pdf": {
+    "file": "data\\raw\\d79b98d6_Engaging-with-ASGM_Short-Guide-Commercial-Banks.pdf",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:50:25"
+  },
+  "https://www.planetgold.org/resources/cross-programme-analysis-planetgold-asgm-financial-access-interventions": {
+    "file": "data\\raw\\fe46bcd9_cross-programme-analysis-planetgold-asgm-financial-access-interventions.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Cross-programme Analysis of planetGOLD ASGM Financial Access Interventions | planetGOLD",
+    "fetched": "2026-07-16 21:50:28"
+  },
+  "https://www.planetgold.org/cross-programme-analysis-asgm-financial-access": {
+    "file": "data\\raw\\e1214b32_cross-programme-analysis-asgm-financial-access.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Analysis of Financial Access Interventions for the Artisanal and Small-Scale Gold Mining Sector | planetGOLD",
+    "fetched": "2026-07-16 21:50:31"
+  },
+  "https://www.planetgold.org/resources?f%5B0%5D=topics%3A14": {
+    "file": "data\\raw\\a0531eef_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:50:35"
+  },
+  "https://www.planetgold.org/resources?f%5B0%5D=topics%3A25": {
+    "file": "data\\raw\\fb43e8a3_resources.txt",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Resources | planetGOLD",
+    "fetched": "2026-07-16 21:50:38"
+  },
+  "https://www.planetgold.org/sites/default/files/Cross%20Programmatic%20Analysis%20and%20Identification%20of%20Best%20Practices-ASGM%20Financial%20Inclusion%20Efforts%20for%20pG%20Phase%201%20Countries.pdf": {
+    "file": "data\\raw\\0d325b49_Cross_20Programmatic_20Analysis_20and_20Identification_20of_20Best_20Practices-A.pdf",
+    "source": "planetGOLD - mercury-free artisanal gold mining",
+    "tags": [
+      "training",
+      "gold",
+      "mercury-free",
+      "artisanal",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:50:44"
+  },
+  "https://delvedatabase.org/resources": {
+    "file": "data\\raw\\f86f1983_resources.txt",
+    "source": "Delve - World Bank/Pact ASM resource library",
+    "tags": [
+      "training",
+      "artisanal",
+      "small-scale",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Delve | Resource Library",
+    "fetched": "2026-07-16 21:50:54"
+  },
+  "https://www.igfmining.org/artisanal-and-small-scale-mining/": {
+    "file": "data\\raw\\e49d561b_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Artisanal and Small-Scale Mining - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:02"
+  },
+  "https://www.igfmining.org/resource/guidance-for-governments-managing-artisanal-and-small-scale-mining/": {
+    "file": "data\\raw\\80398eb8_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Guidance for Governments: Managing artisanal and small-scale mining - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:05"
+  },
+  "https://www.igfmining.org/resource/transforming-artisanal-small-scale-gold-mining-progress-formalization/": {
+    "file": "data\\raw\\ec0b1deb_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Draft | Transforming Artisanal and Small-Scale Gold Mining: Progress in formalization of the sector - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:08"
+  },
+  "https://www.igfmining.org/resource/artisanal-and-small-scale-mining-of-critical-minerals/": {
+    "file": "data\\raw\\3b431130_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Artisanal and Small-Scale Mining of Critical Minerals - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:11"
+  },
+  "https://www.igfmining.org/resource/gender-in-artisanal-and-small-scale-mining-training-workshop-for-nigeria/": {
+    "file": "data\\raw\\448db1b9_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Gender in Artisanal and Small-Scale Mining Training Workshop for Nigeria - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:14"
+  },
+  "https://www.igfmining.org/resource/modernizing-artisanal-mining-harnessing-new-technologies-for-sustainable-development/": {
+    "file": "data\\raw\\857b0a33_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Modernizing Artisanal and Small-Scale Mining: Harnessing new technologies for sustainable development - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:17"
+  },
+  "https://www.igfmining.org/resource/asgm-tailings-management-and-reprocessing-governance-global-trends/": {
+    "file": "data\\raw\\04e8f4e1_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "ASGM Tailings Management and Reprocessing Governance: Global trends - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:20"
+  },
+  "https://www.igfmining.org/resource/llicit-financial-flows-and-conflict-in-artisanal-and-small-scale-gold-mining-burkina-faso-mali-and-niger/": {
+    "file": "data\\raw\\f54f815f_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Illicit Financial Flows and Conflict in Artisanal and Small-Scale Gold Mining: Burkina Faso, Mali, and Niger - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:23"
+  },
+  "https://www.igfmining.org/resource/national-workshop-on-artisanal-and-small-scale-mining-illicit-financial-flows-and-conflict-in-niger/": {
+    "file": "data\\raw\\61ee4840_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "National Workshop on Artisanal and Small-Scale Mining, Illicit Financial Flows, and Conflict in Niger - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:26"
+  },
+  "https://www.igfmining.org/resource/gendered-impacts-of-covid-19-on-artisanal-and-small-scale-mining-asm/": {
+    "file": "data\\raw\\18ace87e_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Gendered Impacts of COVID-19 on Artisanal and Small-Scale Mining (ASM) - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:32"
+  },
+  "https://www.igfmining.org/illicit-flows-responsible-gold-asgm/": {
+    "file": "data\\raw\\c64ec6c1_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Illicit Flows to Responsible Gold: Global Coalition for Action on ASGM",
+    "fetched": "2026-07-16 21:51:36"
+  },
+  "https://www.igfmining.org/event/curbing-illicit-gold-flows-africa-webinar/": {
+    "file": "data\\raw\\87bb83c6_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Tracking the Hidden Gold: Addressing illicit financial flows in ASGM - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:39"
+  },
+  "https://www.igfmining.org/country-support/capacity-building-and-training/gender-asm-zimbabwe-sadc/": {
+    "file": "data\\raw\\4f9a9524_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Workshop on Gender Equality and Artisanal and Small-Scale Mining in the Southern African Development Community Region - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:43"
+  },
+  "https://www.igfmining.org/country-support/capacity-building-and-training/artisanal-and-small-scale-copper-mining-training-in-namibia/": {
+    "file": "data\\raw\\ecb700ff_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Artisanal and Small-Scale Copper Mining Training in Namibia - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:46"
+  },
+  "https://www.igfmining.org/country-support/capacity-building-and-training/workshop-gender-asm-peru/": {
+    "file": "data\\raw\\6e7d4d97_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Training Workshop on Gender Equity and Artisanal and Small-Scale Mining in Peru - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:51:49"
+  },
+  "https://www.iisd.org/system/files/publications/igf-guidance-for-governments-asm_0.pdf": {
+    "file": "data\\raw\\6369d54c_igf-guidance-for-governments-asm_0.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:52:22"
+  },
+  "https://www.iisd.org/system/files/publications/igf-guidance-for-governments-asm-brief-en.pdf": {
+    "file": "data\\raw\\a99a4dbc_igf-guidance-for-governments-asm-brief-en.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:52:49"
+  },
+  "https://www.iisd.org/sites/default/files/publications/igf-guidance-for-governments-asm-supplement.pdf": {
+    "file": "data\\raw\\fa0fb6c4_igf-guidance-for-governments-asm-supplement.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:53:58"
+  },
+  "https://www.igfmining.org/wp-content/uploads/2025/02/igf-asgm-case-study-draft-02-2025.pdf": {
+    "file": "data\\raw\\e4617ffa_igf-asgm-case-study-draft-02-2025.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:54:17"
+  },
+  "https://www.iisd.org/system/files/2024-12/artisanal-small-scale-mining-critical-minerals.pdf": {
+    "file": "data\\raw\\b9ed4019_artisanal-small-scale-mining-critical-minerals.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:54:42"
+  },
+  "https://www.iisd.org/system/files/2024-06/igf-gender-artisanal-small-scale-mining-training.pdf": {
+    "file": "data\\raw\\7b157579_igf-gender-artisanal-small-scale-mining-training.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:54:48"
+  },
+  "https://www.igfmining.org/wp-content/uploads/2024/07/igf-modernizing-artisanal-small-scale-mining-technologies.pdf": {
+    "file": "data\\raw\\83bcf78d_igf-modernizing-artisanal-small-scale-mining-technologies.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:55:17"
+  },
+  "https://www.igfmining.org/event/global-trends-in-asgm-tailings-management-and-reprocessing-governance/": {
+    "file": "data\\raw\\bc58467c_index.txt",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Global Trends in ASGM Tailings Management and Reprocessing Governance - Intergovernmental Forum on Mining",
+    "fetched": "2026-07-16 21:55:20"
+  },
+  "https://www.iisd.org/system/files/2024-05/igf-asgm-tailings-management-reprocessing-governance.pdf": {
+    "file": "data\\raw\\0b46ca0e_igf-asgm-tailings-management-reprocessing-governance.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:55:48"
+  },
+  "https://www.iisd.org/system/files/2022-09/illicit-financial-flows-conflict-artisanal-small-scale-gold-mining.pdf": {
+    "file": "data\\raw\\acd5ae39_illicit-financial-flows-conflict-artisanal-small-scale-gold-mining.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:56:10"
+  },
+  "https://www.iisd.org/system/files/2022-06/national-workshop-asm-niger-meeting-report-en.pdf": {
+    "file": "data\\raw\\8cbdbfd1_national-workshop-asm-niger-meeting-report-en.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:56:33"
+  },
+  "https://www.iisd.org/system/files/2022-01/gender-mining-governance-bibliography-asm.pdf": {
+    "file": "data\\raw\\18138c0a_gender-mining-governance-bibliography-asm.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:56:42"
+  },
+  "https://www.iisd.org/system/files/2022-01/gendered-impacts-covid-19-asm.pdf": {
+    "file": "data\\raw\\fbd35233_gendered-impacts-covid-19-asm.pdf",
+    "source": "IGF - artisanal and small-scale mining guidance",
+    "tags": [
+      "training",
+      "artisanal",
+      "policy",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:56:48"
+  },
+  "https://www.responsiblemines.org/en/": {
+    "file": "data\\raw\\44547e12_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "The Alliance for Responsible Mining promotes responsible gold sourcing",
+    "fetched": "2026-07-16 21:57:10"
+  },
+  "https://www.responsiblemines.org/wp-content/uploads/2026/07/ARM-Annual-Report-2025.pdf": {
+    "file": "data\\raw\\e1ecbdc7_ARM-Annual-Report-2025.pdf",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 21:57:35"
+  },
+  "https://www.responsiblemines.org/wp-content/uploads/2024/06/Copper-Mining-in-Peru-ENG.pdf": {
+    "file": "data\\raw\\b0af08d6_Copper-Mining-in-Peru-ENG.pdf",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 22:02:19"
+  },
+  "https://www.responsiblemines.org/wp-content/uploads/2023/06/ASM-progress-app-one-pager-VF.pdf": {
+    "file": "data\\raw\\806fd06c_ASM-progress-app-one-pager-VF.pdf",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 22:02:34"
+  },
+  "https://www.responsiblemines.org/en/2026/06/gold-processing-plants-women-alternative-mercury/": {
+    "file": "data\\raw\\a36f5956_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Mine Waste, Women's Work: Why Gold Processing Plants Are Still Not a Real Alternative to Mercury use - ARM",
+    "fetched": "2026-07-16 22:02:37"
+  },
+  "https://www.responsiblemines.org/en/2025/12/multi-stakeholder-initiatives-bridging-fragmented-copper-supply-chains-to-integrate-artisanal-miners/": {
+    "file": "data\\raw\\95231f68_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Multi-Stakeholder Initiatives: Bridging Fragmented Copper Supply Chains to Integrate Artisanal Miners - ARM",
+    "fetched": "2026-07-16 22:02:40"
+  },
+  "https://www.responsiblemines.org/en/2025/09/metals-mining-summit-2025/": {
+    "file": "data\\raw\\a8d08e77_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Metals & Mining Summit 2025 - ARM",
+    "fetched": "2026-07-16 22:02:42"
+  },
+  "https://www.responsiblemines.org/en/our-work/miners-support/": {
+    "file": "data\\raw\\d47950f2_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Miners' support - ARM",
+    "fetched": "2026-07-16 22:02:45"
+  },
+  "https://www.responsiblemines.org/en/sustainable-mines/": {
+    "file": "data\\raw\\3dd795c0_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Sustainable Mines Program",
+    "fetched": "2026-07-16 22:02:48"
+  },
+  "https://www.responsiblemines.org/en/2025/05/between-the-legal-and-the-legitimate-how-to-engage-ethically-with-informal-small-scale-mining/": {
+    "file": "data\\raw\\15a3911e_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Between the Legal and the Legitimate: How to Engage Ethically with Informal Small-Scale Mining - ARM",
+    "fetched": "2026-07-16 22:02:51"
+  },
+  "https://www.responsiblemines.org/en/2024/11/arm-participates-at-exposibram-2024-promoting-a-responsible-mining-sector/": {
+    "file": "data\\raw\\716164d6_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "ARM Participates at EXPOSIBRAM 2024: Promoting a Responsible Mining Sector - ARM",
+    "fetched": "2026-07-16 22:02:54"
+  },
+  "https://www.responsiblemines.org/en/2024/11/the-alliance-for-responsible-mining-receives-international-recognition-for-its-commitment-to-transitioning-toward-sustainable-mining/": {
+    "file": "data\\raw\\d2aca1c3_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "The Alliance for Responsible Mining receives international recognition for its commitment to transitioning toward sustainable mining. - ARM",
+    "fetched": "2026-07-16 22:02:58"
+  },
+  "https://www.responsiblemines.org/en/2024/09/the-alliance-for-responsible-mining-joins-council-for-inclusive-capitalism-as-an-ally/": {
+    "file": "data\\raw\\3bd89940_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "ARM Joins Council For Inclusive Capitalism as an Ally - ARM",
+    "fetched": "2026-07-16 22:03:01"
+  },
+  "https://www.responsiblemines.org/en/2024/04/advocating-for-transparent-practices-in-the-gold-industry-redefining-recycled-gold/": {
+    "file": "data\\raw\\c759834d_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Advocating for Transparent Practices in the Gold Industry: Redefining Recycled Gold - ARM",
+    "fetched": "2026-07-16 22:03:04"
+  },
+  "https://www.responsiblemines.org/en/2024/01/the-alliance-for-responsible-mining-arm-announces-strategic-changes-in-its-board-of-directors-in-the-celebration-of-its-20th-anniversary/": {
+    "file": "data\\raw\\5fcb97dd_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "The Alliance for Responsible Mining (ARM) Announces Strategic Changes in its Board of Directors in the Celebration of its 20th Anniversary - ARM",
+    "fetched": "2026-07-16 22:03:07"
+  },
+  "https://www.responsiblemines.org/en/2023/10/joint-ngo-statement-eu-conflict-minerals-regulation-failing-to-reach-its-goals/": {
+    "file": "data\\raw\\af941113_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Joint NGO Statement: EU Conflict Minerals Regulation Failing to Reach Its Goals - ARM",
+    "fetched": "2026-07-16 22:03:09"
+  },
+  "https://www.responsiblemines.org/en/2025/01/how-you-can-drive-change-in-mining-5-ways-to-support-arms-work/": {
+    "file": "data\\raw\\c10312ca_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Report 2024 - ARM",
+    "fetched": "2026-07-16 22:03:12"
+  },
+  "https://www.responsiblemines.org/en/category/blog-en/environment/": {
+    "file": "data\\raw\\ab10a869_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "environment Archives - ARM",
+    "fetched": "2026-07-16 22:03:30"
+  },
+  "https://www.responsiblemines.org/en/category/ethnic-mining/": {
+    "file": "data\\raw\\3a03bc79_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Ethnic Mining Archives - ARM",
+    "fetched": "2026-07-16 22:03:33"
+  },
+  "https://www.responsiblemines.org/en/category/inclusive-miners/": {
+    "file": "data\\raw\\f7f1d370_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Inclusive Miners Archives - ARM",
+    "fetched": "2026-07-16 22:03:36"
+  },
+  "https://www.responsiblemines.org/en/category/mercury-phase/": {
+    "file": "data\\raw\\0fabc2fe_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Mercury Phase Archives - ARM",
+    "fetched": "2026-07-16 22:03:38"
+  },
+  "https://www.responsiblemines.org/wp-content/uploads/2025/08/ASM-COPPER-RESPONSIBLE-SUPPLY-CHAINS-POLICY-BRIEF.pdf": {
+    "file": "data\\raw\\ed45fbca_ASM-COPPER-RESPONSIBLE-SUPPLY-CHAINS-POLICY-BRIEF.pdf",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 22:04:12"
+  },
+  "https://www.craftmines.org/wp-content/uploads/2021/02/CRAFT_2.0_VOL-3_Ingles_VersionFinal.pdf": {
+    "file": "data\\raw\\7ebef64f_CRAFT_2.0_VOL-3_Ingles_VersionFinal.pdf",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 22:04:29"
+  },
+  "https://www.responsiblemines.org/en/contact/": {
+    "file": "data\\raw\\3153c12b_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "Contact - ARM",
+    "fetched": "2026-07-16 22:04:35"
+  },
+  "https://www.iisd.org/system/files/publications/igf-asm-trends-summary.pdf": {
+    "file": "data\\raw\\93587321_igf-asm-trends-summary.pdf",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 22:04:41"
+  },
+  "https://www.responsiblemines.org/en/2023/06/ocb-system-signs-partnership-with-arm-for-mineral-traceability/": {
+    "file": "data\\raw\\a369670d_index.txt",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "html",
+    "title": "OCB System signs partnership with ARM for mineral traceability - ARM",
+    "fetched": "2026-07-16 22:04:45"
+  },
+  "https://www.responsiblemines.org/wp-content/uploads/2023/10/The-EU-conflict-minerals-regulation_High-stakes-disappointing-results.pdf": {
+    "file": "data\\raw\\dab344d8_The-EU-conflict-minerals-regulation_High-stakes-disappointing-results.pdf",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 22:04:50"
+  },
+  "https://www.responsiblemines.org/wp-content/uploads/2025/06/ARM-Report-2024_.pdf": {
+    "file": "data\\raw\\39729c54_ARM-Report-2024_.pdf",
+    "source": "Alliance for Responsible Mining",
+    "tags": [
+      "training",
+      "artisanal",
+      "standards",
+      "how-to"
+    ],
+    "type": "pdf",
+    "fetched": "2026-07-16 22:04:58"
+  }
+}
