@@ -171,7 +171,10 @@ def ask_cloud_llm(question: str, passages: list[dict], language: str) -> str | N
         {
             "model": LLM_MODEL,
             "messages": build_prompt(question, passages, language),
-            "max_tokens": 700,
+            # Generous cap: Gemini spends part of this budget on internal
+            # reasoning before writing the visible answer.
+            "max_tokens": 2500,
+            "reasoning_effort": "low",
         }
     ).encode("utf-8")
     req = urllib.request.Request(
