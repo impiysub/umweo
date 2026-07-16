@@ -141,7 +141,7 @@ def sources_of(passages: list[dict]) -> list[dict]:
 def web_search(question: str) -> tuple[list[str], list[dict]]:
     """Search the web via SerpAPI, biased to Zambia. Returns (snippets, links).
 
-    Results are cached in memory - the free plan allows 100 searches/month.
+    Results are cached in memory - the free plan allows 250 searches/month.
     """
     if not SERP_API_KEY:
         return [], []
