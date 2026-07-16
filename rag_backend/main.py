@@ -28,6 +28,7 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from rank_bm25 import BM25Okapi
 
@@ -141,6 +142,11 @@ def generate_answer(question: str, passages: list[dict], language: str) -> str:
         )
     new_tokens = output[0][inputs["input_ids"].shape[1]:]
     return model_tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
+
+
+@app.get("/")
+def home():
+    return FileResponse(BASE_DIR / "static" / "index.html")
 
 
 @app.get("/health")

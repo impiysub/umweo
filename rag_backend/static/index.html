@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UMWEO AI — Mining Assistant</title>
+<style>
+  :root {
+    --bg: #10151c;
+    --panel: #1a2230;
+    --accent: #e8a33d;
+    --accent-dark: #c4862a;
+    --text: #eef2f7;
+    --muted: #93a1b5;
+    --user: #2b5c46;
+    --bot: #232f42;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+  }
+  header {
+    background: var(--panel);
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid var(--accent);
+  }
+  .logo {
+    width: 40px; height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  header h1 { font-size: 18px; }
+  header p { font-size: 12px; color: var(--muted); }
+  header select {
+    margin-left: auto;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--muted);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  #chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .msg {
+    max-width: 85%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .msg.user { background: var(--user); align-self: flex-end; border-bottom-right-radius: 4px; }
+  .msg.bot  { background: var(--bot);  align-self: flex-start; border-bottom-left-radius: 4px; }
+  .msg .sources {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .msg .sources a { color: var(--accent); text-decoration: none; }
+  .chips {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    padding: 0 16px 8px;
+  }
+  .chip {
+    background: var(--panel);
+    border: 1px solid var(--muted);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 7px 13px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .chip:active { background: var(--accent); color: #111; }
+  form {
+    display: flex;
+    gap: 10px;
+    padding: 12px 16px 16px;
+    background: var(--panel);
+  }
+  input[type=text] {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--muted);
+    border-radius: 12px;
+    color: var(--text);
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+  button {
+    background: var(--accent);
+    border: none;
+    border-radius: 12px;
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.5; }
+  .typing { color: var(--muted); font-style: italic; }
+  .disclaimer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 0 16px 10px;
+    background: var(--panel);
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">⛏️</div>
+  <div>
+    <h1>UMWEO AI</h1>
+    <p>Mining safety &amp; information assistant</p>
+  </div>
+  <select id="language">
+    <option value="english">English</option>
+    <option value="bemba">Bemba</option>
+    <option value="nyanja">Nyanja</option>
+    <option value="tonga">Tonga</option>
+  </select>
+</header>
+
+<div id="chat">
+  <div class="msg bot">Muli bwanji! 👋 I am UMWEO AI, your mining assistant.
+
+Ask me about mining safety, licences, the environment, or gold and copper mining. My answers come from official mining documents.</div>
+</div>
+
+<div class="chips" id="chips">
+  <button class="chip">What PPE do I need for mining?</button>
+  <button class="chip">How can I process gold without mercury?</button>
+  <button class="chip">How do I get a small-scale mining licence?</button>
+  <button class="chip">What is tailings management?</button>
+</div>
+
+<form id="form">
+  <input type="text" id="input" placeholder="Ask a mining question..." autocomplete="off">
+  <button type="submit" id="send">Send</button>
+</form>
+<div class="disclaimer">Prototype — answers come from public mining guidance documents. In emergencies contact local authorities or the Mine Safety Department.</div>
+
+<script>
+const chat = document.getElementById("chat");
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+const send = document.getElementById("send");
+const language = document.getElementById("language");
+
+function addMessage(text, cls, sources) {
+  const div = document.createElement("div");
+  div.className = "msg " + cls;
+  div.textContent = text;
+  if (sources && sources.length) {
+    const s = document.createElement("div");
+    s.className = "sources";
+    s.innerHTML = "📄 Sources:<br>" + sources
+      .map(x => `&bull; <a href="${x.url}" target="_blank" rel="noopener">${x.source}</a>`)
+      .join("<br>");
+    div.appendChild(s);
+  }
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+  return div;
+}
+
+async function ask(question) {
+  addMessage(question, "user");
+  input.value = "";
+  send.disabled = true;
+  const typing = addMessage("Searching mining documents...", "bot typing");
+  try {
+    const res = await fetch("/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: question, language: language.value }),
+    });
+    const data = await res.json();
+    typing.remove();
+    addMessage(data.answer, "bot", data.sources);
+  } catch (e) {
+    typing.remove();
+    addMessage("Sorry — I could not reach the server. Please check your connection and try again.", "bot");
+  }
+  send.disabled = false;
+  input.focus();
+}
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const q = input.value.trim();
+  if (q) ask(q);
+});
+
+document.getElementById("chips").addEventListener("click", e => {
+  if (e.target.classList.contains("chip")) ask(e.target.textContent);
+});
+</script>
+</body>
+</html>
