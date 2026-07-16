@@ -102,7 +102,7 @@ LLM_API_URL = os.environ.get(
     "LLM_API_URL",
     "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
 )
-LLM_MODEL = os.environ.get("LLM_MODEL", "gemini-2.5-flash")
+LLM_MODEL = os.environ.get("LLM_MODEL", "gemini-flash-latest")
 if LLM_API_KEY:
     print(f"Cloud LLM enabled: {LLM_MODEL}")
 elif model is None:
