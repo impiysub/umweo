@@ -168,10 +168,20 @@ const input = document.getElementById("input");
 const send = document.getElementById("send");
 const language = document.getElementById("language");
 
+function renderMarkdown(text) {
+  const esc = text
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return esc
+    .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
+    .replace(/^#+\s*(.+)$/gm, "<b>$1</b>")
+    .replace(/^\s*[\*\-]\s+/gm, "• ");
+}
+
 function addMessage(text, cls, sources) {
   const div = document.createElement("div");
   div.className = "msg " + cls;
-  div.textContent = text;
+  if (cls.indexOf("bot") !== -1) div.innerHTML = renderMarkdown(text);
+  else div.textContent = text;
   if (sources && sources.length) {
     const s = document.createElement("div");
     s.className = "sources";
