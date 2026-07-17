@@ -179,6 +179,34 @@ class ChatMessage {
   ChatMessage(this.text, this.isUser, {this.sources = const []});
 }
 
+/// Cleans model markdown: strips heading markers, turns list markers into
+/// bullets. Bold segments are handled by [markdownSpans].
+String cleanMarkdown(String text) {
+  var s = text.replaceAll(RegExp(r'^#{1,6}\s*', multiLine: true), '');
+  s = s.replaceAll(RegExp(r'^[ \t]*[\*\-][ \t]+', multiLine: true), '•  ');
+  return s;
+}
+
+/// Splits text into spans, rendering **bold** segments with heavy weight.
+List<TextSpan> markdownSpans(String text) {
+  final spans = <TextSpan>[];
+  final bold = RegExp(r'\*\*(.+?)\*\*');
+  var index = 0;
+  for (final match in bold.allMatches(text)) {
+    if (match.start > index) {
+      spans.add(TextSpan(text: text.substring(index, match.start)));
+    }
+    spans.add(TextSpan(
+        text: match.group(1),
+        style: const TextStyle(fontWeight: FontWeight.w700)));
+    index = match.end;
+  }
+  if (index < text.length) {
+    spans.add(TextSpan(text: text.substring(index)));
+  }
+  return spans;
+}
+
 // ---- Chat tab ---------------------------------------------------------------
 
 class ChatTab extends StatefulWidget {
@@ -530,14 +558,19 @@ class _ChatTabState extends State<ChatTab>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              m.text,
-              style: TextStyle(
-                fontSize: 15,
-                height: 1.45,
-                color: m.isUser ? Colors.white : kText,
-              ),
-            ),
+            m.isUser
+                ? Text(
+                    m.text,
+                    style: const TextStyle(
+                        fontSize: 15, height: 1.45, color: Colors.white),
+                  )
+                : Text.rich(
+                    TextSpan(
+                      style: const TextStyle(
+                          fontSize: 15, height: 1.45, color: kText),
+                      children: markdownSpans(cleanMarkdown(m.text)),
+                    ),
+                  ),
             if (m.sources.isNotEmpty) ...[
               const Divider(height: 20, color: kBorder),
               ...m.sources.take(4).map((s) => InkWell(
