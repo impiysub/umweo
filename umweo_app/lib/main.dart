@@ -594,90 +594,712 @@ class _TipsTabState extends State<TipsTab>
   }
 }
 
+// ---- Courses ---------------------------------------------------------------
+
+class Lesson {
+  final String title;
+  final String body;
+  const Lesson(this.title, this.body);
+}
+
+class QuizQuestion {
+  final String question;
+  final List<String> options;
+  final int answer; // index of the correct option
+  const QuizQuestion(this.question, this.options, this.answer);
+}
+
+class Course {
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final List<Lesson> lessons;
+  final List<QuizQuestion> quiz;
+  const Course(this.title, this.subtitle, this.icon,
+      {this.lessons = const [], this.quiz = const []});
+
+  bool get available => lessons.isNotEmpty;
+}
+
+const kCourses = [
+  Course(
+    'Mining Safety Basics',
+    'PPE, pit safety, and emergency response',
+    Icons.health_and_safety_outlined,
+    lessons: [
+      Lesson(
+        'Protect Your Body (PPE)',
+        'Personal Protective Equipment (PPE) is your first defence against '
+            'injury.\n\n'
+            '- HARD HAT: protects your head from falling rocks. Wear it at '
+            'all times on site.\n'
+            '- STRONG BOOTS: protect your feet from sharp rocks and heavy '
+            'objects. Never mine in sandals.\n'
+            '- DUST MASK: mining dust damages your lungs slowly. You may not '
+            'feel it today, but it can cause serious disease later.\n'
+            '- GLOVES: protect your hands when handling rock and tools.\n'
+            '- HIGH-VISIBILITY VEST: makes sure others can see you, '
+            'especially near machines and vehicles.\n\n'
+            'A miner who cannot work because of injury cannot feed a family. '
+            'PPE is not a cost - it is protection for your income.',
+      ),
+      Lesson(
+        'Pit and Tunnel Safety',
+        'Most deaths in small-scale mining come from collapsing pits and '
+            'tunnels.\n\n'
+            '- CHECK EVERY MORNING: before entering, look at the pit walls. '
+            'Cracks, bulges, or water seeping out are danger signs. Do not '
+            'enter until it is made safe.\n'
+            '- AFTER RAIN, WAIT: rain makes walls soft and heavy. Many '
+            'collapses happen in the rainy season.\n'
+            '- SUPPORT THE ROOF: in tunnels, use strong timber supports. If '
+            'the roof drips or cracks, leave immediately.\n'
+            '- SLOPE THE WALLS: dig pit walls at an angle, not straight '
+            'down. Straight walls fall without warning.\n'
+            '- NEVER DIG UNDER A WALL: undercutting is the fastest way to '
+            'cause a collapse.',
+      ),
+      Lesson(
+        'Work Together, Respond Fast',
+        'When an accident happens, the first minutes decide everything.\n\n'
+            '- NEVER WORK ALONE: always have a partner who knows exactly '
+            'where you are.\n'
+            '- AGREE ON SIGNALS: decide together how to warn each other of '
+            'danger - a whistle, a shout, a rope pull.\n'
+            '- KEEP A FIRST AID KIT: at every site. Learn to stop bleeding '
+            'and treat crush injuries before help arrives.\n'
+            '- KNOW YOUR EMERGENCY CONTACTS: save the numbers of the '
+            'nearest clinic, police, and the Mine Safety Department.\n'
+            '- REPORT ACCIDENTS: reporting helps the Ministry make mining '
+            'safer for everyone.',
+      ),
+    ],
+    quiz: [
+      QuizQuestion(
+        'What should you check every morning before entering a pit?',
+        ['The weather forecast', 'The pit walls for cracks and bulges',
+            'Your phone battery', 'The price of copper'],
+        1,
+      ),
+      QuizQuestion(
+        'Why is a dust mask important?',
+        ['It keeps your face warm', 'It hides your identity',
+            'Mining dust slowly damages your lungs', 'It is required for photos'],
+        2,
+      ),
+      QuizQuestion(
+        'When are pit collapses most common?',
+        ['During the rainy season', 'On Mondays', 'At night', 'In the dry season'],
+        0,
+      ),
+      QuizQuestion(
+        'What is the rule about working underground?',
+        ['Work fast and leave', 'Never work alone',
+            'Only work at night', 'Take your radio'],
+        1,
+      ),
+      QuizQuestion(
+        'How should pit walls be dug?',
+        ['Straight down to save time', 'At an angle (sloped)',
+            'Undercut at the bottom', 'It does not matter'],
+        1,
+      ),
+    ],
+  ),
+  Course(
+    'Mercury-Free Gold Processing',
+    'Safer methods that protect your health',
+    Icons.science_outlined,
+    lessons: [
+      Lesson(
+        'Why Mercury Is Dangerous',
+        'Mercury is a poison that builds up in your body over years.\n\n'
+            '- It damages the brain, kidneys, and nerves. The damage cannot '
+            'be reversed.\n'
+            '- It harms unborn babies when pregnant women are exposed.\n'
+            '- Burning amalgam releases mercury vapour - breathing it is the '
+            'most dangerous exposure of all.\n'
+            '- Mercury washed into rivers poisons fish that your family and '
+            'community eat.\n\n'
+            'Zambia has signed the Minamata Convention, a global agreement '
+            'to reduce mercury use. Mercury-free methods protect your health '
+            'AND often recover more gold.',
+      ),
+      Lesson(
+        'Gravity Methods: Let Weight Do the Work',
+        'Gold is much heavier than sand and rock. Gravity methods use this.\n\n'
+            '- PANNING: swirling ore with water so the heavy gold settles at '
+            'the bottom. Simple and cheap.\n'
+            '- SLUICING: washing ore down a channel with ridges (riffles). '
+            'The heavy gold is trapped behind the riffles.\n'
+            '- SHAKING TABLES: a vibrating table separates gold from sand '
+            'very efficiently - often used by groups or cooperatives.\n'
+            '- CENTRIFUGES: spinning machines that concentrate fine gold '
+            'that panning misses.\n\n'
+            'Good gravity setups can recover MORE gold than mercury, because '
+            'mercury misses very fine gold particles.',
+      ),
+      Lesson(
+        'Direct Smelting and Borax',
+        'After concentrating your gold with gravity methods:\n\n'
+            '- DIRECT SMELTING: heat the rich concentrate in a crucible '
+            'until the gold melts together. No mercury needed.\n'
+            '- BORAX METHOD: adding borax lowers the melting temperature, so '
+            'the gold collects into a bead using a simple charcoal furnace.\n'
+            '- WORK IN GROUPS: smelting equipment is affordable when a '
+            'cooperative shares it - and cooperatives get better prices '
+            'when selling too.\n\n'
+            'Ask about training: organisations like planetGOLD run '
+            'mercury-free processing programmes for small-scale miners.',
+      ),
+    ],
+    quiz: [
+      QuizQuestion(
+        'Which mercury exposure is the most dangerous?',
+        ['Touching it briefly', 'Breathing vapour when burning amalgam',
+            'Looking at it', 'Storing it in a bottle'],
+        1,
+      ),
+      QuizQuestion(
+        'Why can gravity methods recover MORE gold than mercury?',
+        ['They are magic', 'Mercury misses very fine gold particles',
+            'Gold floats on water', 'They work faster'],
+        1,
+      ),
+      QuizQuestion(
+        'What does the borax method do?',
+        ['Makes gold heavier', 'Lowers the melting temperature of gold',
+            'Turns rock into gold', 'Cleans the water'],
+        1,
+      ),
+      QuizQuestion(
+        'Who is most at risk from mercury exposure?',
+        ['Only old miners', 'Unborn babies and children',
+            'Nobody, it is safe', 'Only people who eat fish'],
+        1,
+      ),
+      QuizQuestion(
+        'What is one advantage of working in a cooperative?',
+        ['Sharing equipment costs and getting better prices',
+            'Longer working hours', 'More mercury', 'Less training'],
+        0,
+      ),
+    ],
+  ),
+  Course('Licensing & Legal Requirements',
+      'Licences, PACRA registration, and your rights', Icons.gavel_outlined),
+  Course('Environmental Protection',
+      'Tailings, water protection, and mine rehabilitation', Icons.eco_outlined),
+  Course('First Aid for Miners', 'Treating injuries before help arrives',
+      Icons.medical_services_outlined),
+  Course('Business & Financial Skills',
+      'Selling minerals, fair prices, and record keeping', Icons.trending_up),
+];
+
 // ---- Courses tab -------------------------------------------------------------
 
 class CoursesTab extends StatelessWidget {
   const CoursesTab({super.key});
 
-  static const _courses = [
-    ('Mining Safety Basics', 'PPE, pit safety, and emergency response', 5,
-        Icons.health_and_safety_outlined),
-    ('Mercury-Free Gold Processing', 'Safer methods that protect your health',
-        4, Icons.science_outlined),
-    ('Licensing & Legal Requirements',
-        'Licences, PACRA registration, and your rights', 3,
-        Icons.gavel_outlined),
-    ('Environmental Protection',
-        'Tailings, water protection, and mine rehabilitation', 4,
-        Icons.eco_outlined),
-    ('First Aid for Miners', 'Treating injuries before help arrives', 3,
-        Icons.medical_services_outlined),
-    ('Business & Financial Skills',
-        'Selling minerals, fair prices, and record keeping', 4,
-        Icons.trending_up),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: const EdgeInsets.all(14),
-      itemCount: _courses.length,
+      itemCount: kCourses.length,
       itemBuilder: (context, i) {
-        final (title, subtitle, modules, icon) = _courses[i];
-        return Container(
-          margin: const EdgeInsets.only(bottom: 10),
-          padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(
-            color: kSurface,
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: kBorder),
-          ),
-          child: Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: kOrange.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(10),
+        final c = kCourses[i];
+        return InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: c.available
+              ? () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => CourseScreen(course: c)))
+              : null,
+          child: Container(
+            margin: const EdgeInsets.only(bottom: 10),
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: kSurface,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: c.available ? kOrange : kBorder),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: kOrange.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Icon(c.icon, color: kOrange, size: 24),
                 ),
-                child: Icon(icon, color: kOrange, size: 24),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(title,
-                        style: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                            color: kText)),
-                    const SizedBox(height: 3),
-                    Text(subtitle,
-                        style: const TextStyle(fontSize: 12.5, color: kMuted)),
-                    const SizedBox(height: 6),
-                    Text('$modules modules',
-                        style: const TextStyle(
-                            fontSize: 11.5,
-                            color: kOrangeSoft,
-                            fontWeight: FontWeight.w600)),
-                  ],
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(c.title,
+                          style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              color: kText)),
+                      const SizedBox(height: 3),
+                      Text(c.subtitle,
+                          style:
+                              const TextStyle(fontSize: 12.5, color: kMuted)),
+                      const SizedBox(height: 6),
+                      Text(
+                          c.available
+                              ? '${c.lessons.length} lessons - quiz - certificate'
+                              : 'Coming soon',
+                          style: TextStyle(
+                              fontSize: 11.5,
+                              color: c.available ? kOrangeSoft : kMuted,
+                              fontWeight: FontWeight.w600)),
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                decoration: BoxDecoration(
-                  border: Border.all(color: kBorder),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const Text('Coming soon',
-                    style: TextStyle(fontSize: 11, color: kMuted)),
-              ),
-            ],
+                Icon(c.available ? Icons.chevron_right : Icons.lock_outline,
+                    color: c.available ? kOrange : kMuted, size: 22),
+              ],
+            ),
           ),
         );
       },
+    );
+  }
+}
+
+// ---- Course screen (lessons) --------------------------------------------------
+
+class CourseScreen extends StatefulWidget {
+  final Course course;
+  const CourseScreen({super.key, required this.course});
+
+  @override
+  State<CourseScreen> createState() => _CourseScreenState();
+}
+
+class _CourseScreenState extends State<CourseScreen> {
+  int _lesson = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    final course = widget.course;
+    final lesson = course.lessons[_lesson];
+    final isLast = _lesson == course.lessons.length - 1;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(course.title, style: const TextStyle(fontSize: 16)),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4),
+          child: LinearProgressIndicator(
+            value: (_lesson + 1) / (course.lessons.length + 1),
+            backgroundColor: kBorder,
+            color: kOrange,
+          ),
+        ),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(18),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('LESSON ${_lesson + 1} OF ${course.lessons.length}',
+                      style: const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700,
+                          color: kOrangeSoft,
+                          letterSpacing: 0.8)),
+                  const SizedBox(height: 6),
+                  Text(lesson.title,
+                      style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          color: kText)),
+                  const SizedBox(height: 14),
+                  Text(lesson.body,
+                      style: const TextStyle(
+                          fontSize: 15, height: 1.55, color: kText)),
+                ],
+              ),
+            ),
+          ),
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Row(
+                children: [
+                  if (_lesson > 0)
+                    OutlinedButton.icon(
+                      onPressed: () => setState(() => _lesson--),
+                      icon: const Icon(Icons.arrow_back, size: 18),
+                      label: const Text('Back'),
+                      style: OutlinedButton.styleFrom(
+                          foregroundColor: kMuted,
+                          side: const BorderSide(color: kBorder),
+                          minimumSize: const Size(0, 48)),
+                    ),
+                  const Spacer(),
+                  FilledButton.icon(
+                    onPressed: () {
+                      if (isLast) {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (_) => QuizScreen(course: course)));
+                      } else {
+                        setState(() => _lesson++);
+                      }
+                    },
+                    icon: Icon(isLast ? Icons.quiz_outlined : Icons.arrow_forward,
+                        size: 18),
+                    label: Text(isLast ? 'Take the quiz' : 'Next lesson'),
+                    style: FilledButton.styleFrom(
+                        backgroundColor: kOrange,
+                        minimumSize: const Size(0, 48)),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---- Quiz screen ---------------------------------------------------------------
+
+class QuizScreen extends StatefulWidget {
+  final Course course;
+  const QuizScreen({super.key, required this.course});
+
+  @override
+  State<QuizScreen> createState() => _QuizScreenState();
+}
+
+class _QuizScreenState extends State<QuizScreen> {
+  int _index = 0;
+  int _correct = 0;
+  int? _selected;
+
+  void _next() {
+    if (_selected == widget.course.quiz[_index].answer) _correct++;
+    if (_index < widget.course.quiz.length - 1) {
+      setState(() {
+        _index++;
+        _selected = null;
+      });
+    } else {
+      final passed = _correct / widget.course.quiz.length >= 0.8;
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (_) => ResultScreen(
+              course: widget.course,
+              correct: _correct,
+              total: widget.course.quiz.length,
+              passed: passed)));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final q = widget.course.quiz[_index];
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Quiz - ${widget.course.title}',
+            style: const TextStyle(fontSize: 16)),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4),
+          child: LinearProgressIndicator(
+            value: (_index + 1) / widget.course.quiz.length,
+            backgroundColor: kBorder,
+            color: kOrange,
+          ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('QUESTION ${_index + 1} OF ${widget.course.quiz.length}',
+                style: const TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w700,
+                    color: kOrangeSoft,
+                    letterSpacing: 0.8)),
+            const SizedBox(height: 8),
+            Text(q.question,
+                style: const TextStyle(
+                    fontSize: 18, fontWeight: FontWeight.w600, color: kText)),
+            const SizedBox(height: 18),
+            ...List.generate(q.options.length, (i) {
+              final selected = _selected == i;
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(12),
+                  onTap: () => setState(() => _selected = i),
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                      color: selected
+                          ? kOrange.withValues(alpha: 0.18)
+                          : kSurface,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                          color: selected ? kOrange : kBorder,
+                          width: selected ? 1.6 : 1),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                            selected
+                                ? Icons.radio_button_checked
+                                : Icons.radio_button_off,
+                            size: 20,
+                            color: selected ? kOrange : kMuted),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Text(q.options[i],
+                              style: const TextStyle(
+                                  fontSize: 14.5, color: kText)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            }),
+            const Spacer(),
+            SafeArea(
+              child: SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  onPressed: _selected == null ? null : _next,
+                  style: FilledButton.styleFrom(
+                      backgroundColor: kOrange,
+                      minimumSize: const Size(0, 50)),
+                  child: Text(_index == widget.course.quiz.length - 1
+                      ? 'Finish quiz'
+                      : 'Next question'),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ---- Result + certificate -------------------------------------------------------
+
+class ResultScreen extends StatefulWidget {
+  final Course course;
+  final int correct;
+  final int total;
+  final bool passed;
+  const ResultScreen(
+      {super.key,
+      required this.course,
+      required this.correct,
+      required this.total,
+      required this.passed});
+
+  @override
+  State<ResultScreen> createState() => _ResultScreenState();
+}
+
+class _ResultScreenState extends State<ResultScreen> {
+  final TextEditingController _name = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Quiz result')),
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Icon(
+                widget.passed
+                    ? Icons.verified_outlined
+                    : Icons.replay_circle_filled_outlined,
+                size: 72,
+                color: widget.passed ? kOrange : kMuted),
+            const SizedBox(height: 16),
+            Text(
+              widget.passed ? 'Well done!' : 'Almost there',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontSize: 24, fontWeight: FontWeight.w700, color: kText),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'You scored ${widget.correct} out of ${widget.total}.'
+              '${widget.passed ? '' : ' You need ${(widget.total * 0.8).ceil()} to pass - review the lessons and try again.'}',
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 15, color: kMuted, height: 1.5),
+            ),
+            const SizedBox(height: 24),
+            if (widget.passed) ...[
+              TextField(
+                controller: _name,
+                style: const TextStyle(color: kText),
+                decoration: InputDecoration(
+                  labelText: 'Your name (for the certificate)',
+                  labelStyle: const TextStyle(color: kMuted),
+                  filled: true,
+                  fillColor: kSurface,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide.none),
+                ),
+              ),
+              const SizedBox(height: 14),
+              FilledButton.icon(
+                onPressed: () {
+                  final name = _name.text.trim().isEmpty
+                      ? 'Miner'
+                      : _name.text.trim();
+                  // Report completion so the Ministry sees training uptake.
+                  http.post(
+                    Uri.parse('$apiBase/feedback'),
+                    headers: {'Content-Type': 'application/json'},
+                    body: jsonEncode({
+                      'survey_question': 'course_completed',
+                      'survey_answer':
+                          '${widget.course.title} (${widget.correct}/${widget.total})',
+                    }),
+                  ).catchError((_) => http.Response('', 0));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (_) => CertificateScreen(
+                          course: widget.course,
+                          name: name,
+                          correct: widget.correct,
+                          total: widget.total)));
+                },
+                icon: const Icon(Icons.workspace_premium_outlined),
+                label: const Text('Get my certificate'),
+                style: FilledButton.styleFrom(
+                    backgroundColor: kOrange, minimumSize: const Size(0, 50)),
+              ),
+            ] else
+              FilledButton.icon(
+                onPressed: () => Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                        builder: (_) => CourseScreen(course: widget.course))),
+                icon: const Icon(Icons.menu_book_outlined),
+                label: const Text('Review lessons'),
+                style: FilledButton.styleFrom(
+                    backgroundColor: kOrange, minimumSize: const Size(0, 50)),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CertificateScreen extends StatelessWidget {
+  final Course course;
+  final String name;
+  final int correct;
+  final int total;
+  const CertificateScreen(
+      {super.key,
+      required this.course,
+      required this.name,
+      required this.correct,
+      required this.total});
+
+  @override
+  Widget build(BuildContext context) {
+    final date =
+        '${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}';
+    return Scaffold(
+      appBar: AppBar(title: const Text('Certificate')),
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(26),
+                decoration: BoxDecoration(
+                  color: kSurface,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: kOrange, width: 2),
+                ),
+                child: Column(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(28),
+                      child: Image.asset('assets/logo.jpeg',
+                          width: 56, height: 56, fit: BoxFit.cover),
+                    ),
+                    const SizedBox(height: 14),
+                    const Text('CERTIFICATE OF COMPLETION',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 2,
+                            color: kOrangeSoft)),
+                    const SizedBox(height: 20),
+                    const Text('This certifies that',
+                        style: TextStyle(fontSize: 13, color: kMuted)),
+                    const SizedBox(height: 8),
+                    Text(name,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+                            color: kText)),
+                    const SizedBox(height: 8),
+                    const Text('has successfully completed the course',
+                        style: TextStyle(fontSize: 13, color: kMuted)),
+                    const SizedBox(height: 8),
+                    Text(course.title,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                            color: kOrange)),
+                    const SizedBox(height: 18),
+                    Container(height: 1, width: 160, color: kBorder),
+                    const SizedBox(height: 14),
+                    Text('Score: $correct / $total    Date: $date',
+                        style: const TextStyle(fontSize: 12.5, color: kMuted)),
+                    const SizedBox(height: 6),
+                    const Text('UMWEO Mining Learning - Prototype',
+                        style: TextStyle(fontSize: 11, color: kMuted)),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Text('Take a screenshot to keep your certificate.',
+                  style: TextStyle(fontSize: 12.5, color: kMuted)),
+              const SizedBox(height: 14),
+              OutlinedButton.icon(
+                onPressed: () =>
+                    Navigator.of(context).popUntil((r) => r.isFirst),
+                icon: const Icon(Icons.home_outlined, size: 18),
+                label: const Text('Back to courses'),
+                style: OutlinedButton.styleFrom(
+                    foregroundColor: kOrangeSoft,
+                    side: const BorderSide(color: kOrange),
+                    minimumSize: const Size(0, 48)),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
