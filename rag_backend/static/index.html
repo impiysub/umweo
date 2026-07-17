@@ -129,7 +129,7 @@
 </head>
 <body>
 <header>
-  <div class="logo">⛏️</div>
+  <div class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></div>
   <div>
     <h1>UMWEO AI</h1>
     <p>Mining safety &amp; information assistant</p>
@@ -143,9 +143,9 @@
 </header>
 
 <div id="chat">
-  <div class="msg bot">Muli bwanji! 👋 I am UMWEO AI, your mining assistant.
+  <div class="msg bot">Welcome. I am UMWEO, your mining information assistant.
 
-Ask me about mining safety, licences, the environment, or gold and copper mining. My answers come from official mining documents.</div>
+Ask me about mining safety, licences, the environment, or gold and copper mining. My answers come from official mining guidance, with sources shown for every response.</div>
 </div>
 
 <div class="chips" id="chips">
@@ -185,7 +185,7 @@ function addMessage(text, cls, sources) {
   if (sources && sources.length) {
     const s = document.createElement("div");
     s.className = "sources";
-    s.innerHTML = "📄 Sources:<br>" + sources
+    s.innerHTML = "Sources:<br>" + sources
       .map(x => `&bull; <a href="${x.url}" target="_blank" rel="noopener">${x.source}</a>`)
       .join("<br>");
     div.appendChild(s);

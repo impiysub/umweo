@@ -134,7 +134,10 @@ def retrieve(question: str, k: int = TOP_K) -> list[dict]:
 def sources_of(passages: list[dict]) -> list[dict]:
     seen = {}
     for p in passages:
-        seen.setdefault(p["source"], {"source": p["source"], "url": p["url"]})
+        seen.setdefault(
+            p["source"],
+            {"source": p["source"], "url": p["url"], "type": "document"},
+        )
     return list(seen.values())
 
 
@@ -175,7 +178,9 @@ def web_search(question: str) -> tuple[list[str], list[dict]]:
                 title = r.get("title", "web result")
                 snippets.append(f"[Web - {title}]\n{r['snippet']}")
                 if r.get("link"):
-                    links.append({"source": f"🌐 {title}", "url": r["link"]})
+                    links.append(
+                        {"source": title, "url": r["link"], "type": "web"}
+                    )
         _search_cache[cache_key] = (snippets, links[:4])
     except Exception as e:
         print(f"Web search error: {e}")
@@ -298,9 +303,79 @@ WELCOME_REPLY = (
 )
 
 
+# ---- Daily mining tips (rotates by day; Ministry-editable in production) ----
+TIPS = [
+    "Check your pit walls every morning before work. Cracks, bulges, or "
+    "water seeping out are warning signs - do not enter until it is safe.",
+    "Always wear your hard hat, boots, and dust mask. Most mining injuries "
+    "happen to miners not wearing protective equipment.",
+    "Never work alone underground. Always have a partner who knows where "
+    "you are and can call for help.",
+    "Support tunnel roofs with proper timber. If the roof drips or cracks "
+    "after rain, stay out until it is inspected.",
+    "Mercury harms you and your family. Ask about mercury-free gold "
+    "processing methods like gravity concentration and borax smelting.",
+    "Backfill old pits and trenches. Open pits collect stagnant water, "
+    "which breeds mosquitoes and can drown children and livestock.",
+    "Keep a first aid kit at the mine site and learn how to treat crush "
+    "injuries, cuts, and heat exhaustion before help arrives.",
+]
+
+FEEDBACK_FILE = BASE_DIR / "data" / "feedback.jsonl"
+
+
+class Feedback(BaseModel):
+    helpful: bool | None = None
+    mining_type: str | None = None
+    challenge: str | None = None
+    contact_requested: bool | None = None
+    survey_question: str | None = None
+    survey_answer: str | None = None
+    question: str | None = None
+    language: str = "english"
+
+
 @app.get("/")
 def home():
     return FileResponse(BASE_DIR / "static" / "index.html")
+
+
+@app.get("/tip")
+def tip():
+    import datetime
+
+    day = datetime.date.today().toordinal()
+    return {"tip": TIPS[day % len(TIPS)]}
+
+
+@app.get("/tips")
+def all_tips():
+    return {"tips": TIPS}
+
+
+@app.post("/feedback")
+def submit_feedback(fb: Feedback):
+    import datetime
+
+    FEEDBACK_FILE.parent.mkdir(parents=True, exist_ok=True)
+    record = fb.model_dump()
+    record["timestamp"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    with open(FEEDBACK_FILE, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    return {"status": "recorded"}
+
+
+@app.get("/feedback")
+def list_feedback():
+    """Ministry view: everything miners have reported."""
+    if not FEEDBACK_FILE.exists():
+        return {"count": 0, "entries": []}
+    entries = [
+        json.loads(line)
+        for line in FEEDBACK_FILE.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    return {"count": len(entries), "entries": entries}
 
 
 @app.get("/health")
