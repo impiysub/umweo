@@ -1,7 +1,9 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 /// The live UMWEO backend. Change this if the server moves.
 const String apiBase = 'https://web-production-da27d.up.railway.app';
@@ -51,7 +53,62 @@ class UmweoApp extends StatelessWidget {
           dividerColor: kBorder,
         ),
       ),
-      home: const HomeShell(),
+      home: const SplashScreen(),
+    );
+  }
+}
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(milliseconds: 2200), () {
+      if (mounted) {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (_) => const HomeShell()));
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: kBg,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(70),
+              child: Image.asset('assets/logo.jpeg',
+                  width: 140, height: 140, fit: BoxFit.cover),
+            ),
+            const SizedBox(height: 26),
+            const Text('UMWEO AI',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 3,
+                    color: kText)),
+            const SizedBox(height: 8),
+            const Text('Mining Information Assistant',
+                style: TextStyle(fontSize: 14, color: kMuted)),
+            const SizedBox(height: 40),
+            const SizedBox(
+              width: 26,
+              height: 26,
+              child: CircularProgressIndicator(strokeWidth: 2.5, color: kOrange),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -110,7 +167,8 @@ class HomeShell extends StatelessWidget {
 class Source {
   final String name;
   final bool isWeb;
-  Source(this.name, this.isWeb);
+  final String url;
+  Source(this.name, this.isWeb, this.url);
 }
 
 class ChatMessage {
@@ -207,8 +265,8 @@ class _ChatTabState extends State<ChatTab>
       final data = jsonDecode(response.body) as Map<String, dynamic>;
       final sources = ((data['sources'] as List?) ?? [])
           .cast<Map<String, dynamic>>()
-          .map((s) =>
-              Source(s['source'] as String? ?? 'source', s['type'] == 'web'))
+          .map((s) => Source(s['source'] as String? ?? 'source',
+              s['type'] == 'web', s['url'] as String? ?? ''))
           .toList();
       setState(() {
         _messages.add(ChatMessage(data['answer'] as String? ?? '...', false,
@@ -346,21 +404,33 @@ class _ChatTabState extends State<ChatTab>
   }
 
   Widget _suggestionChips() {
-    return SizedBox(
-      height: 46,
+    return Container(
+      height: 62,
+      alignment: Alignment.center,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
         children: _suggestions
             .map((s) => Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: ActionChip(
-                    backgroundColor: kSurface,
-                    side: const BorderSide(color: kBorder),
-                    label: Text(s,
-                        style:
-                            const TextStyle(fontSize: 12.5, color: kText)),
-                    onPressed: () => _ask(s),
+                  padding: const EdgeInsets.only(right: 10),
+                  child: Material(
+                    color: kSurface,
+                    borderRadius: BorderRadius.circular(22),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(22),
+                      onTap: () => _ask(s),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 11),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: kBorder),
+                          borderRadius: BorderRadius.circular(22),
+                        ),
+                        child: Text(s,
+                            style: const TextStyle(
+                                fontSize: 13, color: kText, height: 1.0)),
+                      ),
+                    ),
                   ),
                 ))
             .toList(),
@@ -470,20 +540,37 @@ class _ChatTabState extends State<ChatTab>
             ),
             if (m.sources.isNotEmpty) ...[
               const Divider(height: 20, color: kBorder),
-              ...m.sources.take(4).map((s) => Padding(
-                    padding: const EdgeInsets.only(bottom: 3),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Icon(s.isWeb ? Icons.public : Icons.description,
-                            size: 14, color: kMuted),
-                        const SizedBox(width: 6),
-                        Expanded(
-                          child: Text(s.name,
-                              style: const TextStyle(
-                                  fontSize: 11.5, color: kMuted)),
-                        ),
-                      ],
+              ...m.sources.take(4).map((s) => InkWell(
+                    onTap: s.url.isEmpty
+                        ? null
+                        : () => launchUrl(Uri.parse(s.url),
+                            mode: LaunchMode.externalApplication),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 3),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(s.isWeb ? Icons.public : Icons.description,
+                              size: 14, color: kOrangeSoft),
+                          const SizedBox(width: 6),
+                          Expanded(
+                            child: Text(
+                              s.name,
+                              style: TextStyle(
+                                fontSize: 11.5,
+                                color: kOrangeSoft,
+                                decoration: s.url.isEmpty
+                                    ? TextDecoration.none
+                                    : TextDecoration.underline,
+                                decorationColor: kOrangeSoft,
+                              ),
+                            ),
+                          ),
+                          if (s.url.isNotEmpty)
+                            const Icon(Icons.open_in_new,
+                                size: 12, color: kMuted),
+                        ],
+                      ),
                     ),
                   )),
             ],
